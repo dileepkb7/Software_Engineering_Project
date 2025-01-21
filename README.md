@@ -2,7 +2,7 @@
 
 ## Project Description
 
-Once completed, the program will simulate the Pig game, providing a virtual environment where players can take turns rolling a six-sided die to accumulate points. The program will track each player’s current turn score and total score, and allow players to make decisions about whether to roll again to risk earning more points or to hold and secure their turn score. If a player rolls a 1, the program will reset their turn score to zero and end their turn, implementing the risk-and-reward dynamic of the game. The program will determine the winner by identifying the first player to reach or exceed 100 points, while handling game rules, scorekeeping, and player interactions seamlessly.
+Once completed, the program will simulate the Pig game, allowing players to take turns rolling a virtual die, tracking scores, and deciding when to hold or risk rolling again, with the ultimate goal of reaching 100 points to win.
 
 ## Technology Stack
 
