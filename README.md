@@ -1,5 +1,12 @@
 # Rolling Team
 
+##Team Members 
+
+- Venkata Tejaswi Battula
+- Venkata Bhuvana Kancharla
+- Jithendra Bojedla
+- Dileep Kumar Boyapati
+
 ## Project Description
 
 Once completed, the program will simulate the Pig game, allowing players to take turns rolling a virtual die, tracking scores, and deciding when to hold or risk rolling again, with the ultimate goal of reaching 100 points to win.
