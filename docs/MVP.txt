@@ -1,0 +1,12 @@
+MVP Features for Pig Game
+
+Display two player panels with total and current scores.  
+Show a centered dice image.  
+Add "New Game," "Roll Dice," and "Hold" buttons.  
+Generate and display random dice rolls.  
+Update current score unless a 1 is rolled.  
+Switch players on rolling a 1.  
+Add current score to total score on "Hold."  
+Declare the winner when a score reaches or exceeds 20.  
+Highlight the active player panel.  
+Visually indicate the winner.
