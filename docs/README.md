@@ -1,4 +1,4 @@
-List of potential features for the application:
+**List of potential features for the application:**
 
 •	Two-player mode (human vs. human)
 
