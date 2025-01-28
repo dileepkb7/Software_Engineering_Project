@@ -1,4 +1,4 @@
-MVP Features for Pig Game
+MVP Features
 
 Display two player panels with total and current scores.  
 Show a centered dice image.  
@@ -10,3 +10,4 @@ Add current score to total score on "Hold."
 Declare the winner when a score reaches or exceeds 20.  
 Highlight the active player panel.  
 Visually indicate the winner.
+
