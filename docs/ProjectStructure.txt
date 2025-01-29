@@ -1,0 +1,8 @@
+The project will be organized into multiple files:
+
+1. index.html: Structure of the game UI.
+2. style.css: Styling for the game interface.
+3. script.js: Game logic and interactions.
+4. docs/: Documentation including feature brainstorming.
+5. README.md: Overview of the project, setup instructions, and features.
+6. Assets: Contains images, icons, and other media files used in the game.
