@@ -1,4 +1,4 @@
-MVP Features
+**MVP Features**
 
 Display two player panels with total and current scores.  
 Show a centered dice image.  
