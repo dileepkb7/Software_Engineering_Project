@@ -5,4 +5,4 @@ The project will be organized into multiple files:
 3. script.js: Game logic and interactions.
 4. docs/: Documentation including feature brainstorming.
 5. README.md: Overview of the project, setup instructions, and features.
-6. Assets: Contains images, icons, and other media files used in the game.
+6. Assets/: Contains images, icons, and other media files used in the game.
