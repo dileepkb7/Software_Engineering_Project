@@ -10,3 +10,8 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
+
+/* Background gradient */
+body {
+  background-image: linear-gradient(to right, #ff758c, #ff7eb3);
+}
