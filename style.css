@@ -15,3 +15,21 @@ html {
 body {
   background-image: linear-gradient(to right, #ff758c, #ff7eb3);
 }
+
+/* Improved color contrast */
+body {
+  color: #333;
+}
+
+.player {
+  color: #444;
+}
+
+.score {
+  color: #ff758c;
+}
+
+.btn {
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  color: white;
+}
