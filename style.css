@@ -90,3 +90,13 @@ body {
   justify-content: center;
   margin-top: 20px;
 }
+
+/* Subtle transition effect when switching turns */
+.player {
+  transition: background-color 0.5s ease, transform 0.5s ease-in-out;
+}
+
+.player--active {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
