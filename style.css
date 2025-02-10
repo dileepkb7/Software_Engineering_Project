@@ -223,3 +223,29 @@ main {
   left: 50%;
   transform: translateX(-50%);
 }
+
+
+.current {
+  background-color: #c7365f;
+  opacity: 0.8;
+  border-radius: 9px;
+  color: #fff;
+  width: 65%;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.75s;
+  position: absolute;
+  bottom: 60px; /* Adjust this value to place the current score box higher */
+}
+
+.current-label {
+  font-size: 4rem; /* Larger font size for the label */
+  font-weight: 700; /* Optional: makes the label bold */
+  color: #ddd; /* Light color for the label */
+}
+
+.current-score {
+  font-size: 6rem; /* Smaller font size for the score */
+  font-weight: 700;
+  color: #fff;
+}
