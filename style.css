@@ -38,3 +38,26 @@ body {
 body {
   font-family: 'Poppins', sans-serif;
 }
+
+/* Font Styling for Better Readability */
+.player-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.score {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.btn {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Highlight the active player */
+.player--active {
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+  border: 3px solid #ff758c;
+}
