@@ -226,26 +226,118 @@ main {
 
 
 .current {
-  background-color: #c7365f;
-  opacity: 0.8;
-  border-radius: 9px;
+  background-color: rgba(0, 0, 0, 0.6);  /* Slightly dark background */
   color: #fff;
-  width: 65%;
-  padding: 2rem;
-  text-align: center;
-  transition: all 0.75s;
+  border-radius: 10px;
+  width: 40%;  /* Reduced the width for a smaller box */
+  padding: 0.5rem;  /* Reduced padding to decrease size */
   position: absolute;
-  bottom: 60px; /* Adjust this value to place the current score box higher */
+  bottom: 3rem;  /* Adjusted to slightly move the dialog box up */
+  text-align: center;
 }
 
 .current-label {
-  font-size: 4rem; /* Larger font size for the label */
-  font-weight: 700; /* Optional: makes the label bold */
-  color: #ddd; /* Light color for the label */
+  font-size: 1.4rem;  /* Slightly smaller font for the label */
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
 }
 
 .current-score {
-  font-size: 6rem; /* Smaller font size for the score */
-  font-weight: 700;
-  color: #fff;
+  font-size: 3rem;  /* Smaller font for the current score */
+  font-weight: bold;
+}
+
+
+
+
+/* Styling for active player */
+.player--active {
+  background-color: rgba(0, 255, 0, 0.3); /* Light green background */
+  box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.5); /* Green glowing effect */
+  border: 3px solid #008000; /* Green border */
+}
+
+.player--active .name {
+  color: #fff; /* White text for active player's name */
+  font-weight: bold; /* Bold font for active player */
+}
+
+.player--active .score {
+  color: #fff; /* White color for active player's score */
+  font-weight: 400; /* Regular weight for score */
+}
+
+
+/* Styling for the buttons */
+.btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* Centers buttons horizontally */
+  color: #444;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  padding: 1rem 2.5rem;
+  border-radius: 50rem; /* Rounded button edges */
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.9); /* Light background */
+  backdrop-filter: blur(5px); /* Slight blur effect for modern look */
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 1);
+  transform: translateX(-50%) scale(1.05); /* Slight zoom effect on hover */
+  box-shadow: 0 1rem 5rem rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+  transform: translateX(-50%) scale(0.98); /* Slight shrink effect on click */
+}
+
+.btn--new {
+  top: 4rem;
+}
+
+.btn--roll {
+  top: 39.3rem;
+}
+
+.btn--hold {
+  top: 46.1rem;
+}
+
+/* Button icons */
+.btn::before {
+  font-size: 2.5rem; /* Larger size for the icons */
+  margin-right: 0.7rem;
+  vertical-align: middle; /* Align icon with text */
+}
+
+/* Mobile and responsive design (adjusting button sizes for smaller screens) */
+@media (max-width: 768px) {
+  .btn {
+    font-size: 1.5rem;
+    padding: 0.8rem 2rem;
+  }
+
+  .btn::before {
+    font-size: 2rem;
+  }
+
+  .btn--new {
+    top: 3rem;
+  }
+
+  .btn--roll {
+    top: 30rem;
+  }
+
+  .btn--hold {
+    top: 36.5rem;
+  }
 }
