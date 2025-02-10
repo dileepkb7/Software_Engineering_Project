@@ -130,3 +130,96 @@ body {
   font-weight: 700; /* Bold font for the winner */
   color: #c7365f; /* Winner name color */
 }
+
+/* Center the entire content */
+body {
+  display: flex;
+  justify-content: center;  /* Centers the content horizontally */
+  align-items: center;      /* Centers the content vertically */
+  height: 100vh;            /* Takes full viewport height */
+  background-image: linear-gradient(to top left, #d1a6f5 0%, #ffafcc 100%);  /* Light gradient background */
+  color: #333;
+  margin: 0;
+}
+
+/* Main container for players */
+main {
+  display: flex;
+  justify-content: center;   /* Ensures the two panels are horizontally centered */
+  align-items: stretch;      /* Makes the two panels stretch to full height */
+  width: 80%;                 /* Adjust width for spacing on the sides */
+  height: 100%;               /* Full viewport height */
+  background-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(200px);
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+/* Each player takes equal space inside the main container */
+.player {
+  flex: 1;                  /* Ensures both player sections are equal in size */
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;  /* Align content to the top */
+  align-items: center;
+  transition: all 0.75s;
+  text-align: center;
+  position: relative;
+}
+
+/* Player 1 specific background color - Lighter shade of blue */
+.player--0 {
+  background-color: #a8d0e6; /* Soft pastel blue for Player 1 */
+}
+
+/* Player 2 specific background color - Lighter shade of peach */
+.player--1 {
+  background-color: #f8d1b4; /* Soft pastel peach for Player 2 */
+}
+
+/* Player info (name, score) section */
+.player-info {
+  text-align: center;
+  margin-top: 1rem;           /* Adds space between the player name and score */
+}
+
+/* Style for player name (larger font size) */
+.name {
+  font-size: 4.5rem;           /* Increased font size for clarity */
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  color: white;                /* Ensure text is readable */
+}
+
+/* Style for the score */
+.score {
+  font-size: 7rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Active player highlighting */
+.player--active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.player--active .name {
+  font-weight: 900;
+}
+
+.player--active .score {
+  font-weight: 700;
+}
+
+/* Separator line between the two panels */
+.separator {
+  width: 2px;                /* Thin vertical line */
+  height: 100%;              /* Extends the full height of the screen */
+  background-color: #fff;    /* White color for clear visibility */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
