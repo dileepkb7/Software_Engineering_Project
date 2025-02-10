@@ -38,3 +38,19 @@ body {
 body {
   font-family: 'Poppins', sans-serif;
 }
+
+/* Font Styling for Better Readability */
+.player-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.score {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.btn {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
