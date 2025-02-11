@@ -341,3 +341,14 @@ main {
     top: 36.5rem;
   }
 }
+
+
+
+.dice {
+  width: 100px;  /* Adjust size for clarity */
+  height: 100px;
+  position: absolute;
+  left: 50%;  /* Center horizontally */
+  transform: translateX(-50%);  /* Ensure true centering */
+  top: 40%;  /* Adjust position for visibility */
+}
