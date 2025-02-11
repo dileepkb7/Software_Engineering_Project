@@ -9,6 +9,8 @@ const current0El = document.getElementById("current--0");
 const current1El = document.getElementById("current--1");
 const diceEl = document.querySelector(".dice");
 const btnNew = document.querySelector(".btn--new");
+const btnRoll = document.querySelector(".btn--roll");
+const rolledNumberEl = document.querySelector(".rolled-number"); // Element to display the rolled number
 
 // Function to initialize the game
 const init = function () {
@@ -37,3 +39,16 @@ init();
 
 // Event listener for starting a new game
 btnNew.addEventListener("click", init);
+
+// Rolling dice functionality
+btnRoll.addEventListener("click", function () {
+  // 1. Generating a random dice roll
+  const dice = Math.trunc(Math.random() * 6) + 1;
+
+  // 2. Display dice
+  diceEl.classList.remove("hidden");
+  diceEl.src = `dice-${dice}.png`;
+
+  // 3. Display rolled number
+  rolledNumberEl.textContent = `You rolled: ${dice}`;
+});
