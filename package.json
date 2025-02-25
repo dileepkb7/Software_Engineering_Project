@@ -1,0 +1,26 @@
+{
+  "name": "software_engineering_project",
+  "version": "1.0.0",
+  "description": "- Venkata Tejaswi Battula\r - Venkata Bhuvana Kancharla\r - Jithendra Bojedla\r - Dileep Kumar Boyapati",
+  "main": "script.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dileepkb7/Software_Engineering_Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dileepkb7/Software_Engineering_Project/issues"
+  },
+  "homepage": "https://github.com/dileepkb7/Software_Engineering_Project#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
