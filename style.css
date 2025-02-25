@@ -46,5 +46,79 @@ body {
   cursor: pointer;
 }
 
+main {
+  position: relative;
+  width: 90%;
+  max-width: 100rem;
+  background-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(10px);
+  border-radius: 9px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.players-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.player {
+  flex: 1 1 45%;
+  margin: 1rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.name {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.score {
+  font-size: 5rem;
+  color: #c7365f;
+}
+
+.current {
+  background: #c7365f;
+  color: white;
+  border-radius: 9px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.current-score {
+  font-size: 2.5rem;
+}
+
+.player--active {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.btn {
+  font-size: 1.8rem;
+  padding: 1rem;
+  margin: 1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.dice {
+  width: 65px;
+  height: 65px;
+  margin-top: 2rem;
+}
 
 
