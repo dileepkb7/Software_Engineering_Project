@@ -3,352 +3,48 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
-}
+  box-sizing: border-box;
 
 html {
   font-size: 62.5%;
-  box-sizing: border-box;
 }
 
 /* Background gradient */
 body {
-  background-image: linear-gradient(to right, #ff758c, #ff7eb3);
-}
-
-/* Improved color contrast */
-body {
+  font-family: 'Nunito', sans-serif;
+  height: 100vh;
   color: #333;
-}
-
-.player {
-  color: #444;
-}
-
-.score {
-  color: #ff758c;
-}
-
-.btn {
-  background: linear-gradient(135deg, #ff758c, #ff7eb3);
-  color: white;
-}
-
-/* Apply a stylish and readable font */
-body {
-  font-family: 'Poppins', sans-serif;
-}
-
-/* Font Styling for Better Readability */
-.player-name {
-  font-size: 1.8rem;
-  font-weight: 700;
-}
-
-.score {
-  font-size: 3rem;
-  font-weight: 800;
-}
-
-.btn {
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-/* Highlight the active player */
-.player--active {
-  background-color: rgba(255, 255, 255, 0.4);
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
-  border: 3px solid #ff758c;
-}
-
-/* Button Styling for Better Visual Appeal */
-.btn {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #444;
-  background: none;
-  border: none;
-  font-family: inherit;
-  font-size: 1.8rem;
-  text-transform: uppercase;
-  cursor: pointer;
-  font-weight: 400;
-  transition: all 0.2s;
-
-  background-color: white;
-  background-color: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(10px);
-
-  padding: 0.7rem 2.5rem;
-  border-radius: 50rem;
-  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
-}
-
-.btn::first-letter {
-  font-size: 2.4rem;
-  display: inline-block;
-  margin-right: 0.7rem;
-}
-
-.btn--new {
-  top: 4rem;
-}
-.btn--roll {
-  top: 39.3rem;
-}
-.btn--hold {
-  top: 46.1rem;
-}
-
-.btn:active {
-  transform: translate(-50%, 3px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
-}
-
-.btn:focus {
-  outline: none;
-}
-
-/* Subtle transition effect when switching turns */
-.player {
-  transition: background-color 0.5s ease, transform 0.5s ease-in-out;
-}
-
-.player--active {
-  background-color: rgba(255, 255, 255, 0.3);
-  transform: scale(1.05);
-}
-
-/* Winner Effect */
-.player--winner {
-  background-color: #2f2f2f; /* Dark background for winner */
-}
-
-.player--winner .name {
-  font-weight: 700; /* Bold font for the winner */
-  color: #c7365f; /* Winner name color */
-}
-
-/* Center the entire content */
-body {
-  display: flex;
-  justify-content: center;  /* Centers the content horizontally */
-  align-items: center;      /* Centers the content vertically */
-  height: 100vh;            /* Takes full viewport height */
-  background-image: linear-gradient(to top left, #d1a6f5 0%, #ffafcc 100%);  /* Light gradient background */
-  color: #333;
-  margin: 0;
-}
-
-/* Main container for players */
-main {
-  display: flex;
-  justify-content: center;   /* Ensures the two panels are horizontally centered */
-  align-items: stretch;      /* Makes the two panels stretch to full height */
-  width: 80%;                 /* Adjust width for spacing on the sides */
-  height: 100%;               /* Full viewport height */
-  background-color: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(200px);
-  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
-  border-radius: 9px;
-  overflow: hidden;
-}
-
-/* Each player takes equal space inside the main container */
-.player {
-  flex: 1;                  /* Ensures both player sections are equal in size */
-  padding: 3rem;
+  background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;  /* Align content to the top */
   align-items: center;
-  transition: all 0.75s;
-  text-align: center;
-  position: relative;
+  justify-content: center;
 }
 
-/* Player 1 specific background color - Lighter shade of blue */
-.player--0 {
-  background-color: #a8d0e6; /* Soft pastel blue for Player 1 */
-}
-
-/* Player 2 specific background color - Lighter shade of peach */
-.player--1 {
-  background-color: #f8d1b4; /* Soft pastel peach for Player 2 */
-}
-
-/* Player info (name, score) section */
-.player-info {
-  text-align: center;
-  margin-top: 1rem;           /* Adds space between the player name and score */
-}
-
-/* Style for player name (larger font size) */
-.name {
-  font-size: 4.5rem;           /* Increased font size for clarity */
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
-  color: white;                /* Ensure text is readable */
-}
-
-/* Style for the score */
-.score {
-  font-size: 7rem;
-  font-weight: bold;
-  color: #fff;
-}
-
-/* Active player highlighting */
-.player--active {
-  background-color: rgba(255, 255, 255, 0.4);
-}
-
-.player--active .name {
-  font-weight: 900;
-}
-
-.player--active .score {
-  font-weight: 700;
-}
-
-/* Separator line between the two panels */
-.separator {
-  width: 2px;                /* Thin vertical line */
-  height: 100%;              /* Extends the full height of the screen */
-  background-color: #fff;    /* White color for clear visibility */
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-
-.current {
-  background-color: rgba(0, 0, 0, 0.6);  /* Slightly dark background */
-  color: #fff;
-  border-radius: 10px;
-  width: 40%;  /* Reduced the width for a smaller box */
-  padding: 0.5rem;  /* Reduced padding to decrease size */
-  position: absolute;
-  bottom: 3rem;  /* Adjusted to slightly move the dialog box up */
-  text-align: center;
-}
-
-.current-label {
-  font-size: 1.4rem;  /* Slightly smaller font for the label */
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
-
-.current-score {
-  font-size: 3rem;  /* Smaller font for the current score */
-  font-weight: bold;
-}
-
-
-
-
-/* Styling for active player */
-.player--active {
-  background-color: rgba(0, 255, 0, 0.3); /* Light green background */
-  box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.5); /* Green glowing effect */
-  border: 3px solid #008000; /* Green border */
-}
-
-.player--active .name {
-  color: #fff; /* White text for active player's name */
-  font-weight: bold; /* Bold font for active player */
-}
-
-.player--active .score {
-  color: #fff; /* White color for active player's score */
-  font-weight: 400; /* Regular weight for score */
-}
-
-
-/* Styling for the buttons */
-.btn {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%); /* Centers buttons horizontally */
-  color: #444;
+.player-selection {
   background: rgba(255, 255, 255, 0.8);
-  border: none;
-  font-family: inherit;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.player-selection label {
   font-size: 1.8rem;
-  text-transform: uppercase;
+  margin-right: 1rem;
+}
+
+.player-selection select {
+  font-size: 1.6rem;
+  padding: 0.5rem;
+}
+
+.player-selection .btn--start {
+  font-size: 1.6rem;
+  padding: 0.7rem 2rem;
+  margin-left: 1rem;
   cursor: pointer;
-  font-weight: 500;
-  transition: all 0.3s ease-in-out;
-  padding: 1rem 2.5rem;
-  border-radius: 50rem; /* Rounded button edges */
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
-  background-color: rgba(255, 255, 255, 0.9); /* Light background */
-  backdrop-filter: blur(5px); /* Slight blur effect for modern look */
-}
-
-.btn:hover {
-  background-color: rgba(255, 255, 255, 1);
-  transform: translateX(-50%) scale(1.05); /* Slight zoom effect on hover */
-  box-shadow: 0 1rem 5rem rgba(0, 0, 0, 0.15);
-}
-
-.btn:active {
-  transform: translateX(-50%) scale(0.98); /* Slight shrink effect on click */
-}
-
-.btn--new {
-  top: 4rem;
-}
-
-.btn--roll {
-  top: 39.3rem;
-}
-
-.btn--hold {
-  top: 46.1rem;
-}
-
-/* Button icons */
-.btn::before {
-  font-size: 2.5rem; /* Larger size for the icons */
-  margin-right: 0.7rem;
-  vertical-align: middle; /* Align icon with text */
-}
-
-/* Mobile and responsive design (adjusting button sizes for smaller screens) */
-@media (max-width: 768px) {
-  .btn {
-    font-size: 1.5rem;
-    padding: 0.8rem 2rem;
-  }
-
-  .btn::before {
-    font-size: 2rem;
-  }
-
-  .btn--new {
-    top: 3rem;
-  }
-
-  .btn--roll {
-    top: 30rem;
-  }
-
-  .btn--hold {
-    top: 36.5rem;
-  }
 }
 
 
 
-.dice {
-  width: 100px;  /* Adjust size for clarity */
-  height: 100px;
-  position: absolute;
-  left: 50%;  /* Center horizontally */
-  transform: translateX(-50%);  /* Ensure true centering */
-  top: 40%;  /* Adjust position for visibility */
-}
