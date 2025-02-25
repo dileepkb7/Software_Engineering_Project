@@ -157,3 +157,38 @@ h1 {
   font-family: 'Arial', sans-serif;
 }
 
+/* New Game Button Styling */
+.btn--new {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #e365d0;
+  color: rgb(18, 8, 8);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+  z-index: 1000;
+}
+
+.btn--new:hover {
+  background-color: #f6baf4;
+}
+
+#player-names-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.player-name-input {
+  font-size: 1.6rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
