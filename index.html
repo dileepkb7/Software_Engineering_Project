@@ -4,5 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pig Game</title>
-  </head>
-</html>
+
+        <!-- Confetti Library -->
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.2"></script>
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="style.css" />
+      </head>
+      <body>
+        <div>
+          <h1>Pig Game</h1>
+        </div>
+    
+        <div class="player-selection">
+          <label for="num-players">Select Number of Players:</label>
+          <select id="num-players">
+            <option value="2">2 Players</option>
+            <option value="3">3 Players</option>
+            <option value="4">4 Players</option>
+          </select>
+          <button class="btn btn--generate">Generate Players</button>
+    
+          <div id="player-names-container"></div>
+    
+          <button class="btn btn--start hidden">Start Game</button>
+        </div>
+
+
+        <main class="hidden">
+          <div class="players-container"></div>
+    
+          <img src="dice-5.png" alt="Playing dice" class="dice hidden" />
+    
+          <button class="btn btn--roll">🎲 Roll dice</button>
+          <button class="btn btn--hold">📥 Hold</button>
+        </main>
+    
+        <!-- New Game Button -->
+        <button class="btn btn--new hidden">🔄 New Game</button>
+    
+        <!-- Updated Script Import -->
+        <script type="module" src="js/main.js"></script>
+      </body>
+    </html>
