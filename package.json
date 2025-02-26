@@ -1,0 +1,30 @@
+{
+  "name": "software_engineering_project",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "- Venkata Tejaswi Battula\r - Venkata Bhuvana Kancharla\r - Jithendra Bojedla\r - Dileep Kumar Boyapati",
+  "main": "script.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dileepkb7/Software_Engineering_Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dileepkb7/Software_Engineering_Project/issues"
+  },
+  "homepage": "https://github.com/dileepkb7/Software_Engineering_Project#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.26.9",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0"
+  }
+}
