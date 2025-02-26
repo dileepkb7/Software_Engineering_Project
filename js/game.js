@@ -60,10 +60,10 @@ export const holdScore = () => {
   }
 };
 
-// Refactored switchPlayer function
-export const switchPlayer = (currentActivePlayer, numPlayers) => {
-  const newActivePlayer = (currentActivePlayer + 1) % numPlayers;
-  return newActivePlayer;
+const switchPlayer = () => {
+  currentScore = 0;
+  switchPlayerUI(activePlayer);
+  activePlayer = (activePlayer + 1) % players.length;
 };
 
 export const newGame = () => {
