@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-// ui.js
-=======
 export const setupUI = () => {
     document.querySelector('.btn--new').classList.add('hidden');
 };
@@ -22,7 +19,6 @@ export const generatePlayerInputs = () => {
 
     document.querySelector('.btn--start').classList.remove('hidden');
 };
->>>>>>> d61084be69fa12202cd11aa03f687747d3768212
 
 // Setup UI initially by hiding the "new game" button
 export const setupUI = () => {
@@ -114,7 +110,3 @@ export const setupUI = () => {
   
     return inputs;
   }
-<<<<<<< HEAD
-  
-=======
->>>>>>> d61084be69fa12202cd11aa03f687747d3768212
