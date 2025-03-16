@@ -13,6 +13,7 @@ let scores,
   playing,
   players,
   playerNames = [];
+  let targetScore = 20; // Default target score
 
 export const initGame = () => {
   players = [];
@@ -22,10 +23,19 @@ export const initGame = () => {
     playerNames.push(input.value.trim() || `Player ${index + 1}`);
   });
 
+  // Get target score from the input field
+  const targetScoreInput = document.getElementById("target-score").value;
+  targetScore = targetScoreInput ? Number(targetScoreInput) : 20;
+
   scores = new Array(playerNames.length).fill(0);
   currentScore = 0;
   activePlayer = 0;
   playing = true;
+
+  // Update the UI with the initial target score
+  document.getElementById(
+    "display-target-score"
+  ).textContent = `Target Score: ${targetScore}`;
 
   resetUI(players, playerNames);
 
@@ -33,74 +43,80 @@ export const initGame = () => {
   newGameSound.play();
 };
 
+
+// Roll Dice
 export const rollDice = () => {
   if (!playing) return;
+
+  diceRollSound.play();
 
   const dice = Math.trunc(Math.random() * 6) + 1;
   updateScores(dice, activePlayer);
 
   if (dice !== 1) {
-    currentScore += dice; // Ensure currentScore is properly updated
+    currentScore += dice;
+    const newTotalScore = scores[activePlayer] + currentScore;
+
     document.getElementById(`current--${activePlayer}`).textContent = currentScore;
 
-    if (scores[activePlayer] + currentScore >= 20) {
-      scores[activePlayer] = 20;
-      document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
-
-      playing = false;  // End game
+    // Check if player wins with this roll
+    if (newTotalScore >= targetScore) {
+      scores[activePlayer] = newTotalScore; // Update final score
+      document.getElementById(`score--${activePlayer}`).textContent = newTotalScore;
+      
+      playing = false;
       launchConfetti();
       winnerSound.play();
-      highlightWinner(activePlayer);
+      
+      document.querySelector(`.player--${activePlayer}`).classList.add("player--winner");
+      return;
     }
   } else {
-    currentScore = 0;
-    document.getElementById(`current--${activePlayer}`).textContent = currentScore;
     switchPlayer();
   }
 };
 
+// Switch Player
+function switchPlayer() {
+  const totalPlayers = document.querySelectorAll(".player").length;
+
+  document
+    .querySelector(`.player--${activePlayer}`)
+    .classList.remove("player-active");
+
+  currentScore = 0;
+  document.getElementById(`current--${activePlayer}`).textContent = 0;
+
+  activePlayer = (activePlayer + 1) % totalPlayers;
+
+  document
+    .querySelector(`.player--${activePlayer}`)
+    .classList.add("player-active");
+}
+
+// Hold Score
 export const holdScore = () => {
   if (!playing) return;
 
   holdSound.play();
 
-  if (scores[activePlayer] + currentScore >= 20) {
-    scores[activePlayer] = 20;
-    document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
+  scores[activePlayer] += currentScore;
+  document.getElementById(`score--${activePlayer}`).textContent =
+    scores[activePlayer];
 
+  if (scores[activePlayer] >= targetScore) {
     playing = false;
     launchConfetti();
     winnerSound.play();
-    highlightWinner(activePlayer);
-
   } else {
-    scores[activePlayer] += currentScore;
-    document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
-
     currentScore = 0;
-    document.getElementById(`current--${activePlayer}`).textContent = currentScore;
+    document.getElementById(`current--${activePlayer}`).textContent =
+      currentScore;
     switchPlayer();
   }
 };
 
-export const switchPlayer = () => {
-  const prevPlayer = activePlayer;
-
-  // Remove the "active" class from the current player
-  document.querySelector(`.player--${prevPlayer}`).classList.remove('player--active');
-
-  activePlayer = (activePlayer + 1) % playerNames.length;
-
-  // Add the "active" class to the next player
-  document.querySelector(`.player--${activePlayer}`).classList.add('player--active');
-  switchPlayerUI(prevPlayer, activePlayer);
-};
-
-export const highlightWinner = (playerIndex) => {
-  // Add the "winner" class to the winning player's panel
-  document.querySelector(`.player--${playerIndex}`).classList.add('player--winner');
-};
-
+// Start New Game
 export const newGame = () => {
   document.querySelector("main").classList.add("hidden");
   document.querySelector(".player-selection").classList.remove("hidden");
