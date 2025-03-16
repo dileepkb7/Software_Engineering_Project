@@ -26,15 +26,30 @@
           <button class="btn btn--generate">Generate Players</button>
     
           <div id="player-names-container"></div>
+
+          <!-- 🔹 Target Score Input Field -->
+        <label for="target-score">Target Score:</label>
+        <input
+         type="number"
+         id="target-score"
+         placeholder="Enter target score"
+         min="10"
+         ="20"
+        />
     
           <button class="btn btn--start hidden">Start Game</button>
         </div>
 
 
         <main class="hidden">
+          <!-- Display Target Score -->
+          <p id="display-target-score">
+           Target Score: <span id="target-score-value">20</span>
+          </p>
+
           <div class="players-container"></div>
     
-          <img src="dice-5.png" alt="Playing dice" class="dice hidden" />
+          <img src="Assets/dice-5.png" alt="Playing dice" class="dice hidden" />
     
           <button class="btn btn--roll">🎲 Roll dice</button>
           <button class="btn btn--hold">📥 Hold</button>
