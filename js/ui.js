@@ -24,44 +24,60 @@ export const setupUI = () => {
   export const resetUI = (players, playerNames) => {
     const playerContainer = document.querySelector('.players-container');
     playerContainer.innerHTML = '';
+    players.length = 0; // Clear previous players array
   
     playerNames.forEach((name, i) => {
-      const playerEl = document.createElement('section');
-      playerEl.classList.add('player', `player--${i}`);
+      const playerEl = document.createElement("section");
+      playerEl.classList.add("player", `player--${i}`);
+      if (i === 0) playerEl.classList.add("player-active"); // First player starts as active
+  
       playerEl.innerHTML = `
-        <h2 class="name" id="name--${i}">${name}</h2>
-        <p class="score" id="score--${i}">0</p>
-        <div class="current">
-          <p class="current-label">Current</p>
-          <p class="current-score" id="current--${i}">0</p>
-        </div>
-      `;
+          <h2 class="name" id="name--${i}">${name}</h2>
+          <p class="score" id="score--${i}">0</p>
+          <div class="current">
+              <p class="current-label">Current</p>
+              <p class="current-score" id="current--${i}">0</p>
+          </div>
+        `;
       playerContainer.appendChild(playerEl);
       players.push(playerEl);
-    });
+    });  
   
-    document.querySelector('main').classList.remove('hidden');
-    document.querySelector('.player-selection').classList.add('hidden');
-    document.querySelector('.btn--new').classList.remove('hidden');
+    document.querySelector("main").classList.remove("hidden");
+    document.querySelector(".player-selection").classList.add("hidden");
+    document.querySelector(".btn--new").classList.remove("hidden");  
   };
   
-  // Function to update the dice image based on the dice roll
-  export const updateScores = (dice, activePlayer) => {
-    const diceEl = document.querySelector('.dice');
-    diceEl.classList.remove('hidden');
-    diceEl.src = `dice-${dice}.png`;
-  };
+  // Display the chosen target score
+  const targetScore = document.getElementById("target-score").value || 20;
+  document.getElementById("target-score-value").textContent = targetScore;
+  document.getElementById("display-target-score").classList.remove("hidden");
+
+// Function to update the dice image based on the roll
+export const updateScores = (dice) => {
+  const diceEl = document.querySelector(".dice");
+  if (diceEl) {
+    diceEl.classList.remove("hidden");
+    diceEl.src = `Assets/dice-${dice}.png`;
+  }
+};
   
-  // Function to switch the active player in the UI
-  export const switchPlayerUI = (activePlayer) => {
-    document.getElementById(`current--${activePlayer}`).textContent = 0;
-    document
-      .querySelector(`.player--${activePlayer}`)
-      .classList.remove('player--active');
-    document
-      .querySelector(`.player--${(activePlayer + 1) % 2}`)
-      .classList.add('player--active');
-  };
+// Function to switch the active player dynamically
+export const switchPlayerUI = (prevPlayer, activePlayer) => {
+  console.log(`Switching from Player ${prevPlayer} to Player ${activePlayer}`);
+
+  const prevPlayerEl = document.querySelector(`.player--${prevPlayer}`);
+  const activePlayerEl = document.querySelector(`.player--${activePlayer}`);
+
+  if (!prevPlayerEl || !activePlayerEl) {
+    console.error("Player elements not found in the DOM.");
+    return;
+  }
+
+  prevPlayerEl.classList.remove("player-active");
+  activePlayerEl.classList.add("player-active");
+};
+
   
   // Function to check if the current player has won
   export const checkWinner = (scores, activePlayer) => {
@@ -75,16 +91,21 @@ export const setupUI = () => {
     return false;
   };
   
-  // Function that generates an array of input elements for the given number of players
-  export function generatePlayerInputsArray(playerCount) {
-    const inputs = [];
-  
-    // Create input elements for each player
-    for (let i = 0; i < playerCount; i++) {
-      const input = document.createElement('input');
-      input.placeholder = `Player ${i + 1}`;
-      inputs.push(input);
-    }
-  
-    return inputs;
-  }
+  // Function to generate an array of player input elements
+export function generatePlayerInputsArray(playerCount) {
+  return Array.from({ length: playerCount }, (_, i) => {
+    const input = document.createElement("input");
+    input.placeholder = `Player ${i + 1}`;
+    return input;
+  });
+}
+
+// Function to handle player switching logic
+export let activePlayer = 0;
+
+export function switchPlayer(players) {
+  const prevPlayer = activePlayer;
+  activePlayer = (activePlayer + 1) % players.length;
+  switchPlayerUI(prevPlayer, activePlayer);
+}
+
